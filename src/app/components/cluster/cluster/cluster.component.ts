@@ -1,35 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { ClusterService } from 'src/app/service';
 
 @Component({
-  selector: 'app-cluster',
-  templateUrl: './cluster.component.html',
-  styleUrls: ['./cluster.component.css']
+    selector: 'app-cluster',
+    templateUrl: './cluster.component.html',
+    styleUrls: ['./cluster.component.css']
 })
 export class ClusterComponent implements OnInit {
-  search: string = '';
-  p: number = 1;
+    search: string = '';
+    p: number = 1;
 
-  clusterLit = [
-    { clusterName: 'ample-dev-cluster', server: 'http//:192.168.1.99', contentName: 'ample-dev-content' },
-    { clusterName: 'ample-prod-cluster', server: 'http//:192.168.1.998', contentName: 'ample-prod-content' },
-    { clusterName: 'ample-dev-cluster', server: 'http//:192.168.1.99', contentName: 'ample-dev-content' },
-    { clusterName: 'ample-prod-cluster', server: 'http//:192.168.1.998', contentName: 'ample-prod-content' },
-    { clusterName: 'ample-dev-cluster', server: 'http//:192.168.1.99', contentName: 'ample-dev-content' },
-    { clusterName: 'ample-prod-cluster', server: 'http//:192.168.1.998', contentName: 'ample-prod-content' },
-    { clusterName: 'ample-dev-cluster', server: 'http//:192.168.1.99', contentName: 'ample-dev-content' },
-    { clusterName: 'ample-prod-cluster', server: 'http//:192.168.1.998', contentName: 'ample-prod-content' },
-    { clusterName: 'ample-dev-cluster', server: 'http//:192.168.1.99', contentName: 'ample-dev-content' },
-    { clusterName: 'ample-prod-cluster', server: 'http//:192.168.1.998', contentName: 'ample-prod-content' },
-    { clusterName: 'ample-dev-cluster', server: 'http//:192.168.1.99', contentName: 'ample-dev-content' },
-    { clusterName: 'ample-prod-cluster', server: 'http//:192.168.1.998', contentName: 'ample-prod-content' },
-    { clusterName: 'ample-dev-cluster', server: 'http//:192.168.1.99', contentName: 'ample-dev-content' },
-    { clusterName: 'ample-prod-cluster', server: 'http//:192.168.1.998', contentName: 'ample-prod-content' },
+    clusterLit: any;
 
-  ]
+    constructor(
+        private ClusterService: ClusterService,
+    ) { }
 
-  constructor() { }
+    ngOnInit(): void {
+        this.getClusterData();
+    }
 
-  ngOnInit(): void {
-  }
-
+    getClusterData() {
+        this.ClusterService.getClusterData().subscribe(Response => {
+            this.clusterLit = Response;
+        }, error => {
+            console.log(error.message);
+        });
+    }
 }

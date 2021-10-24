@@ -1,0 +1,136 @@
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Org</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex">
+                    <!-- <ol class="breadcrumb ms-auto">
+                        <li><a href="#" class="fw-normal">Dashboard</a></li>
+                    </ol>
+                    <a href="https://www.wrappixel.com/templates/ampleadmin/" target="_blank"
+                        class="btn btn-danger  d-none d-md-block pull-right ms-3 hidden-xs hidden-sm waves-effect waves-light text-white">Upgrade
+                        to Pro</a> -->
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="white-box">
+                    <div class="row">
+                        <div class="col-9">
+                            <h3 class="box-title">Org</h3>
+                        </div>
+                        <div class="col-3">
+                            <!-- <div class="input-group rounded">
+                                <input type="search" [(ngModel)]="search" class="form-control rounded"
+                                    placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                <span class="input-group-text border-0" id="search-addon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Org ID</th>
+                                    <th class="border-top-0">Org Name</th>
+                                    <th class="border-top-0">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let org of orgList | paginate: { itemsPerPage: 5, currentPage: p }; let i = index;">
+                                    <td>{{i+1}}</td>
+                                    <td>{{org.name}}</td>
+                                    <td>
+                                        <a title="Delete" class="btn btn-danger" style="margin-right: 10px;"><i
+                                                class=" fas fa-trash"></i></a>
+                                        <a title="Edit" class="btn btn-warning"><i class=" fas fa-pencil-alt"></i></a>
+                                        <mat-slide-toggle class="example-margin" [color]="'primary'">
+                                        </mat-slide-toggle>
+                                    </td>
+                                </tr>
+                                <!-- <tr>
+                                    <td>2</td>
+                                    <td>Sambians</td>
+                                    <td>
+                                        <a title="Delete" class="btn btn-danger" style="margin-right: 10px;"><i
+                                                class=" fas fa-trash"></i></a>
+                                        <a title="Edit" class="btn btn-warning"><i class=" fas fa-pencil-alt"></i></a>
+                                        <mat-slide-toggle class="example-margin" [color]="'primary'">
+                                        </mat-slide-toggle>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Sambians</td>
+                                    <td>
+                                        <a title="Delete" class="btn btn-danger" style="margin-right: 10px;"><i
+                                                class=" fas fa-trash"></i></a>
+                                        <a title="Edit" class="btn btn-warning"><i class=" fas fa-pencil-alt"></i></a>
+                                        <mat-slide-toggle class="example-margin" [color]="'primary'">
+                                        </mat-slide-toggle>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Sambians</td>
+                                    <td>
+                                        <a title="Delete" class="btn btn-danger" style="margin-right: 10px;"><i
+                                                class=" fas fa-trash"></i></a>                                    
+                                        <a title="Edit" class="btn btn-warning"><i class=" fas fa-pencil-alt"></i></a>
+                                        <mat-slide-toggle class="example-margin" [color]="'primary'">
+                                        </mat-slide-toggle>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                        <pagination-controls style="float: right;" (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <!-- <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
+        href="https://www.wrappixel.com/">wrappixel.com</a>
+    </footer> -->
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>

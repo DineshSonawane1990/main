@@ -1,0 +1,93 @@
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb bg-white">
+        <div class="row align-items-center">
+            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <h4 class="page-title">Cluster</h4>
+            </div>
+            <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                <div class="d-md-flex">
+                    <ol class="breadcrumb ms-auto">
+                        <li><a href="#" class="fw-normal"></a></li>
+                    </ol>
+                    <a class="btn btn-danger text-white">
+                        <i class="fas fa-plus-square"></i> Add new cluster
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        <!-- ============================================================== -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="white-box">
+                    <h3 class="box-title">Cluster</h3>
+                    <!-- <p class="text-muted">Add class <code>.table</code></p> -->
+                    <div class="table-responsive">
+                        <table class="table text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th class="border-top-0">Sr no.</th>
+                                    <th class="border-top-0">Cluster Name</th>
+                                    <th class="border-top-0">Server</th>
+                                    <th class="border-top-0">Content name</th>
+                                    <th class="border-top-0">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr
+                                    *ngFor="let cluster of clusterLit | paginate: { itemsPerPage: 5, currentPage: p }; let i = index;">
+                                    <td>{{i+1}}</td>
+                                    <td>{{cluster.clusterName}}</td>
+                                    <td>{{cluster.server}}</td>
+                                    <td>{{cluster.contentName}}</td>
+                                    <td>
+                                        <a title="Delete" class="btn btn-danger"
+                                            style="margin-right: 10px; color: aliceblue;"><i
+                                                class=" fas fa-trash"></i></a>
+                                        <a title="Edit" class="btn btn-warning"><i class=" fas fa-pencil-alt"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <pagination-controls style="float: right;" (pageChange)="p = $event"></pagination-controls>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <!-- <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
+        href="https://www.wrappixel.com/">wrappixel.com</a>
+    </footer> -->
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>

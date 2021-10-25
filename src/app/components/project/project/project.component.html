@@ -47,7 +47,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngFor="let project of projectList| paginate: { itemsPerPage: 5, currentPage: p }; let i = index;">
+                                <tr
+                                    *ngFor="let project of projectList| paginate: { itemsPerPage: 5, currentPage: p }; let i = index;">
                                     <td>{{i+1}}</td>
                                     <td>{{project.projectName}}</td>
                                     <td>{{project.orgName}}</td>
@@ -103,12 +104,78 @@
 
 <ng-template #template>
     <div class="modal-header">
-      <h4 class="modal-title pull-left">Modal</h4>
-      <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
-        <span aria-hidden="true" class="visually-hidden">&times;</span>
-      </button>
+        <h4 class="modal-title pull-left">New Project</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="modalRef?.hide()">
+            <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
     </div>
     <div class="modal-body">
-      This is a modal.
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="exampleInputEmail1">Project Name</label>
+                            <input type="text" class="form-control" id="projectName" aria-describedby="emailHelp"
+                                placeholder="Enter name here">
+                        </div>
+                        <div class="col-sm">
+                            <label for="exampleInputEmail1">Select Org</label>
+                            <select class="form-control">
+                                <option>Default select</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-sm">
+                            <label for="discription">Discription</label>
+                            <textarea class="form-control" id="discription" rows="3"
+                                placeholder="Add discription"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row mt-2">
+                        <div class="col-sm">
+                            <label for="exampleInputEmail1">Owner</label>
+                            <input type="text" class="form-control" id="ownerName" aria-describedby="emailHelp"
+                                placeholder="Enter owner name">
+                        </div>
+                        <div class="col-sm">
+                            <label for="exampleInputEmail1">Owner Email</label>
+                            <input type="email" class="form-control" id="ownerEmail" aria-describedby="emailHelp"
+                                placeholder="Enter owner email">
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm">
+                            <button type="submit" class="btn btn-primary modalButton">Add</button>
+                            <button type="submit" class="btn btn-light modalButton" (click)="modalRef?.hide()">cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-  </ng-template>
+</ng-template>
+
+<label for="exampleFormControlTextarea1">Example textarea</label>
+<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<!-- <form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+            placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form> -->

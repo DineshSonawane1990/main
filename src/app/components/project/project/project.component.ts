@@ -25,7 +25,6 @@ export class ProjectComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-        this.createForm();
         this.getProjectData();
     }
 
@@ -37,22 +36,24 @@ export class ProjectComponent implements OnInit {
         });
     }
 
-    createForm(){
+    createForm() {
         this.projectForm = new FormGroup({
-            projectName: new FormControl(null),
-            org: new FormControl(null),
-            discription: new FormControl(null),
-            ownerName: new FormControl(null),
-            ownerEmail: new FormControl(null)
+            projectName: new FormControl('', null),
+            org: new FormControl('', null),
+            discription: new FormControl('', null),
+            ownerName: new FormControl('', null),
+            ownerEmail: new FormControl('', null)
         });
     }
-    
+
 
     openModal(template: TemplateRef<any>) {
+        this.createForm();
         this.modalRef = this.modalService.show(template);
-      }
+    }
 
-    onSubmit(){
-        console.log('data-->',this.projectForm.value);
+    onSubmit() {
+        console.log('data-->', this.projectForm.value);
+        this.modalService.hide();
     }
 }

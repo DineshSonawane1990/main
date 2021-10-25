@@ -5,6 +5,7 @@ import { ProjectRoutingModule } from './project-routing.module';
 import { ProjectComponent } from './project/project.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +16,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     CommonModule,
     ProjectRoutingModule,
     MatSlideToggleModule,
+    ReactiveFormsModule,
+    FormsModule,
     NgxPaginationModule
   ]
 })

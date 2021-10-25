@@ -10,7 +10,7 @@ import { DashboardModule } from './components/dashboard/dashboard.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
@@ -31,6 +31,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     NgxPaginationModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     ModalModule.forRoot(),
   ],
   providers: [],

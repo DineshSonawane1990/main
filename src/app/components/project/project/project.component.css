@@ -8,3 +8,7 @@
     outline: 0;
     box-shadow: none;
 }
+
+.btn-close {
+    background-size: 15px 15px;
+}

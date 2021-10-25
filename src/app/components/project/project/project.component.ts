@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProjectService } from 'src/app/service';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
     selector: 'app-project',
@@ -14,6 +15,7 @@ export class ProjectComponent implements OnInit {
     modalRef?: BsModalRef;
     search: string = '';
     p: number = 1;
+    projectForm: any;
 
     projectList: any;
 
@@ -23,6 +25,7 @@ export class ProjectComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
+        this.createForm();
         this.getProjectData();
     }
 
@@ -34,7 +37,22 @@ export class ProjectComponent implements OnInit {
         });
     }
 
+    createForm(){
+        this.projectForm = new FormGroup({
+            projectName: new FormControl(null),
+            org: new FormControl(null),
+            discription: new FormControl(null),
+            ownerName: new FormControl(null),
+            ownerEmail: new FormControl(null)
+        });
+    }
+    
+
     openModal(template: TemplateRef<any>) {
         this.modalRef = this.modalService.show(template);
       }
+
+    onSubmit(){
+        console.log('data-->',this.projectForm.value);
+    }
 }

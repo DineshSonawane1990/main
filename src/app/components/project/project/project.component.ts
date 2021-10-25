@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { ProjectService } from 'src/app/service';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
     selector: 'app-project',
@@ -10,6 +11,7 @@ import { ProjectService } from 'src/app/service';
 
 export class ProjectComponent implements OnInit {
 
+    modalRef?: BsModalRef;
     search: string = '';
     p: number = 1;
 
@@ -17,6 +19,7 @@ export class ProjectComponent implements OnInit {
 
     constructor(
         private ProjectService: ProjectService,
+        private modalService: BsModalService,
     ) { }
 
     ngOnInit(): void {
@@ -30,4 +33,8 @@ export class ProjectComponent implements OnInit {
             console.log(error.message);
         });
     }
+
+    openModal(template: TemplateRef<any>) {
+        this.modalRef = this.modalService.show(template);
+      }
 }
